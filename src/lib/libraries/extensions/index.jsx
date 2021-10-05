@@ -47,8 +47,8 @@ import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 // TODO: Replace with correct files.
-import raspyloraIconURL from './gdxfor/gdxfor.png';
-import raspyloraInsetIconURL from './gdxfor/gdxfor-small.svg';
+import raspyloraIconURL from './raspylora/raspylora.svg';
+import raspyloraInsetIconURL from './raspylora/raspylora-small.svg';
 
 export default [
     {
