@@ -46,6 +46,10 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
+// TODO: Replace with correct files.
+import raspyloraIconURL from './gdxfor/gdxfor.png';
+import raspyloraInsetIconURL from './gdxfor/gdxfor-small.svg';
+
 export default [
     {
         name: (
@@ -317,5 +321,24 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
+    },
+    {
+        name: 'Raspberry Pi, Python & LoRa',
+        extensionId: 'raspylora',
+        collaborator: 'btemperli',
+        iconURL: raspyloraIconURL,
+        insetIconURL: raspyloraInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Connect Scratch with Raspberry Pi, Python & LoRa"
+                description="Connect with a server running on a Raspberry Pi and establish connection with python and LoRa."
+                id="gui.extension.raspylora.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: false,
+        bluetoothRequired: false,
+        helpLink: 'https://scratch.mit.edu/btemperli'
     }
 ];
