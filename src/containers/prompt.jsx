@@ -28,7 +28,19 @@ class Prompt extends React.Component {
     handleFocus (event) {
         event.target.select();
     }
+    // Update by btemperli: Variables are not working with the virtual Keyboard.
+    updateInputValueManually () {
+        const inputs = document.getElementsByTagName("input");
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].className.match('prompt_variable-name-text-input_')) {
+                const e = { target: { value: inputs[i].value}};
+                this.handleChange(e);
+                this.state.inputValue = e.target.value;
+            }
+        }
+    }
     handleOk () {
+        this.updateInputValueManually();
         this.props.onOk(this.state.inputValue, {
             scope: this.state.globalSelected ? 'global' : 'local',
             isCloud: this.state.cloudSelected
