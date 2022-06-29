@@ -103,7 +103,26 @@ class Stage extends React.Component {
     questionListener (question) {
         this.setState({question: question});
     }
+    // Update by btemperli: Answers are empty with virtual keyboard.
+    updateAnswerManually () {
+        const inputs = document.getElementsByTagName('input');
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].className.match('input_input-form_')) {
+                const parentNode = inputs[i].parentNode;
+                if (parentNode.className.match('question_question-input_')) {
+                    console.log(inputs[i]);
+                    console.log(inputs[i].value);
+                    return inputs[i].value;
+                }
+            }
+        }
+        return '';
+    }
     handleQuestionAnswered (answer) {
+        const answerFromInputField = this.updateAnswerManually();
+        if (answerFromInputField !== answer) {
+            answer = answerFromInputField;
+        }
         this.setState({question: null}, () => {
             this.props.vm.runtime.emit('ANSWER', answer);
         });

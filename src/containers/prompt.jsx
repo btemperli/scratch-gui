@@ -30,7 +30,7 @@ class Prompt extends React.Component {
     }
     // Update by btemperli: Variables are not working with the virtual Keyboard.
     updateInputValueManually () {
-        const inputs = document.getElementsByTagName("input");
+        const inputs = document.getElementsByTagName('input');
         for (let i = 0; i < inputs.length; i++) {
             if (inputs[i].className.match('prompt_variable-name-text-input_')) {
                 const e = { target: { value: inputs[i].value}};
